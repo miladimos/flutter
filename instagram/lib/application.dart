@@ -51,31 +51,31 @@ class _ApplicationState extends State<Application> {
                 Icons.home,
                 color: Colors.black,
               ),
-              label: "Feed"),
+              label: ""),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.search,
                 color: Colors.black,
               ),
-              label: "Explorer"),
+              label: ""),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.add_box_outlined,
                 color: Colors.black,
               ),
-              label: "Camera"),
+              label: ""),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.favorite,
                 color: Colors.black,
               ),
-              label: "Activities"),
+              label: ""),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
                 color: Colors.black,
               ),
-              label: "Profile"),
+              label: ""),
         ],
         onTap: _onBottomNavigationBarTapped,
         currentIndex: _currentSelectedIndex,

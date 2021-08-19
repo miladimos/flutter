@@ -5,8 +5,10 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.deepPurple,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Profile"),
+      ),
     );
   }
 }
