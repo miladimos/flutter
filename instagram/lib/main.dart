@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'FeedPage.dart';
+import 'application.dart';
+import 'ui/pages/feed/feed_page.dart';
 
 void main() {
   runApp(InstagramApplication());
@@ -18,7 +19,12 @@ class _InstagramApplicationState extends State<InstagramApplication> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Instagram",
-      home: FeedPage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryIconTheme: IconThemeData(color: Colors.black),
+        primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.black))
+      ),
+      home: Application(),
     );
   }
 }
