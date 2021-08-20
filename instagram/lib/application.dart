@@ -13,7 +13,6 @@ class Application extends StatefulWidget {
 }
 
 class _ApplicationState extends State<Application> {
-
   int _currentSelectedIndex = 0;
 
   void _onBottomNavigationBarTapped(int index) {
@@ -33,21 +32,18 @@ class _ApplicationState extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xfffafafa),
-        elevation: 1,
-        title: Text(
-          "Instagram",
-          style: TextStyle(color: Colors.black),
-        ),
-        leading: Icon(Icons.camera_alt),
-        actions: <Widget>[Icon(Icons.send)],
-      ),
       body: this.pagesOption[_currentSelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(
+                Icons.home_outlined,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
                 Icons.home,
                 color: Colors.black,
               ),
@@ -66,6 +62,10 @@ class _ApplicationState extends State<Application> {
               label: ""),
           BottomNavigationBarItem(
               icon: Icon(
+                Icons.favorite_outline,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
                 Icons.favorite,
                 color: Colors.black,
               ),
