@@ -13,7 +13,7 @@ class ListStories extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: size.height * 0.16,
+          height: size.height * 0.14,
           child: ListView.builder(
             padding: EdgeInsets.all(5),
             scrollDirection: Axis.horizontal,

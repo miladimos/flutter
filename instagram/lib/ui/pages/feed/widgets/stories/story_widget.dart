@@ -16,10 +16,9 @@ class _StoryState extends State<Story> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(5),
-            width: 70.0,
-            height: 70.0,
+            margin: EdgeInsets.all(3),
+            width: 60.0,
+            height: 60.0,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
