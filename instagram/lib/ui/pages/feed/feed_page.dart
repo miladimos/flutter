@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/constants.dart';
 import 'package:instagram/ui/pages/feed/widgets/posts/list_posts_widget.dart';
 import 'package:instagram/ui/pages/feed/widgets/stories/list_stories_widget.dart';
 
@@ -9,7 +10,7 @@ class FeedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xfffafafa),
+        backgroundColor: TopBarColor,
         elevation: 1,
         title: const Text(
           "Instagram",

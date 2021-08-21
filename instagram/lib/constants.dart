@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const PrimaryColor = Color(0xfffafafa);
+const TopBarColor = Color(0xfffafafa);
