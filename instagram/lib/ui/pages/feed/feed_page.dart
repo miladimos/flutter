@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/ui/pages/feed/widgets/posts/list_posts_widget.dart';
+import 'package:instagram/ui/pages/feed/widgets/stories/list_stories_widget.dart';
 
 class FeedPage extends StatelessWidget {
   const FeedPage({Key? key}) : super(key: key);
@@ -9,19 +11,19 @@ class FeedPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xfffafafa),
         elevation: 1,
-        title: Text(
+        title: const Text(
           "Instagram",
-          style: TextStyle(color: Colors.black, fontFamily: 'Billabong', fontSize: 34),
+          style: TextStyle(
+              color: Colors.black, fontFamily: 'Billabong', fontSize: 34),
         ),
         actions: <Widget>[Icon(Icons.send)],
       ),
-      body: Center(
-        child: Text(
-          "This is test",
-          style: TextStyle(
-            fontSize: 30,
-            fontFamily: "Billabong"
-          ),
+      body: Container(
+        child: ListView.builder(
+          itemCount: 100,
+          itemBuilder: (BuildContext context, int index) {
+            return index == 0 ? new ListStories() : new FeedListPosts();
+          },
         ),
       ),
     );
