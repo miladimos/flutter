@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/global_error_handler.dart';
 
 import 'application.dart';
-import 'ui/pages/feed/feed_page.dart';
 
 void main() {
-  runApp(InstagramApplication());
+  GlobalErrorHandler(child: InstagramApplication());
 }
 
 class InstagramApplication extends StatefulWidget {
@@ -20,6 +20,8 @@ class _InstagramApplicationState extends State<InstagramApplication> {
     return MaterialApp(
       title: "Instagram",
       debugShowCheckedModeBanner: false,
+      // supportedLocales: AppLocalizations.supportedLocales,
+      // localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: ThemeData(
         primaryIconTheme: IconThemeData(color: Colors.black),
         primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.black))
