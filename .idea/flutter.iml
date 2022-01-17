@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/twitter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/twitter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/twitter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/notes/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/notes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/notes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp/build" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/build" />
+      <excludeFolder url="file://$MODULE_DIR$/telegram/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/telegram/build" />
+      <excludeFolder url="file://$MODULE_DIR$/telegram/.dart_tool" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

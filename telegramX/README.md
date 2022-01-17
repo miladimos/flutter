@@ -1,6 +1,6 @@
-# telegram
+# Telegram X
 
-telegram clone in flutter
+Telegram X clone in flutter
 
 ## Getting Started
 
