@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telegramX/app/models/chat_model.dart';
 import 'package:telegramX/constants.dart';
 
 class Application extends StatefulWidget {
@@ -24,7 +25,60 @@ class _ApplicationState extends State<Application> {
               )),
         ],
       ),
-      body: Text(applicationTitle),
+      body: ListView.builder(
+        itemCount: chatsData.length,
+        itemBuilder: (context, index) => Column(
+          children: [
+            Divider(
+              height: 0.5,
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(chatsData[index].avatar),
+              ),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    chatsData[index].name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: Text(
+                          chatsData[index].time,
+                          style: TextStyle(color: Colors.grey, fontSize: 12.0),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 3.0),
+                        child: Container(
+                          child: Text(
+                            chatsData[index].messagesCount,
+                            style: TextStyle(
+                                fontSize: 12.0, backgroundColor: Colors.grey),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          padding: EdgeInsets.all(2),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              subtitle: Text(chatsData[index].messages),
+            ),
+          ],
+        ),
+      ),
       drawer: Drawer(
         child: Column(
           children: [
