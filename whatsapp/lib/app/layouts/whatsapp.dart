@@ -19,7 +19,8 @@ class _WhatsappState extends State<Whatsapp>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: _tabs.length);
+    _tabController =
+        TabController(vsync: this, length: _tabs.length, initialIndex: 1);
   }
 
   @override
@@ -43,7 +44,29 @@ class _WhatsappState extends State<Whatsapp>
         elevation: 5,
         actions: [
           IconButton(onPressed: null, icon: Icon(Icons.search)),
-          IconButton(onPressed: null, icon: Icon(Icons.more_vert)),
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                  child: Text('New group'),
+                  value: 'new_group',
+                ),
+                PopupMenuItem(
+                  child: Text('Labels'),
+                  value: 'labels',
+                ),
+                PopupMenuItem(
+                  child: Text('Linked devices'),
+                  value: 'linked_devices',
+                ),
+                PopupMenuItem(
+                  child: Text('Settings'),
+                  value: 'settings',
+                ),
+              ];
+            },
+            onSelected: (String choice) {},
+          ),
         ],
         bottom: TabBar(
           controller: _tabController,
@@ -58,6 +81,10 @@ class _WhatsappState extends State<Whatsapp>
           StatusPage(),
           CallsPage(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.message),
+        onPressed: null,
       ),
     );
   }

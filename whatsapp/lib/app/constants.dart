@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
 
 const applicationTitle = 'Whatsapp';
-Color primaryColor = Color(0xff075e54);
+
+const primaryColor = Color(0xff075e54);
+
+const accentColor = Color(0xff25d366);

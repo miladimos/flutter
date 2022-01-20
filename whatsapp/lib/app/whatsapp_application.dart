@@ -15,6 +15,11 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: primaryColor,
+        accentColor: accentColor,
+        primaryIconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        fontFamily: "Vazir",
       ),
       home: Whatsapp(),
     );
