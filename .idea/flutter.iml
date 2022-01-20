@@ -21,6 +21,18 @@
       <excludeFolder url="file://$MODULE_DIR$/telegram/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/telegram/build" />
       <excludeFolder url="file://$MODULE_DIR$/telegram/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/fucking_covid/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/fucking_covid/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/fucking_covid/build" />
+      <excludeFolder url="file://$MODULE_DIR$/divar/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/divar/build" />
+      <excludeFolder url="file://$MODULE_DIR$/divar/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/telegramX/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/telegramX/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/telegramX/build" />
+      <excludeFolder url="file://$MODULE_DIR$/youtube/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/youtube/build" />
+      <excludeFolder url="file://$MODULE_DIR$/youtube/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
