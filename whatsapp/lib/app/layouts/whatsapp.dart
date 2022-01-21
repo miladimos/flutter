@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/constants.dart';
+import 'package:whatsapp/app/functions.dart';
 import 'package:whatsapp/app/layouts/pages/calls/calls_page.dart';
 import 'package:whatsapp/app/layouts/pages/camera/camera_page.dart';
 import 'package:whatsapp/app/layouts/pages/chats/chats_page.dart';
+import 'package:whatsapp/app/layouts/pages/settings/settings/settings_page.dart';
 import 'package:whatsapp/app/layouts/pages/status/status_page.dart';
 
 class Whatsapp extends StatefulWidget {
@@ -116,7 +118,6 @@ class _WhatsappState extends State<Whatsapp>
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               new SliverAppBar(
-                backgroundColor: Theme.of(context).primaryColor,
                 floating: true,
                 pinned: true,
                 title: Text(applicationTitle),
@@ -151,7 +152,14 @@ class _WhatsappState extends State<Whatsapp>
                         ),
                       ];
                     },
-                    onSelected: (String choice) {},
+                    onSelected: (String choice) {
+                      switch (choice) {
+                        case 'settings':
+                          navigateToPage(context, SettingsPage());
+                          break;
+                        default:
+                      }
+                    },
                   ),
                 ],
                 bottom: TabBar(

@@ -5,19 +5,14 @@ import 'package:telegramX/app/widgets/drawer/drawer_widget.dart';
 import 'package:telegramX/constants.dart';
 
 class Application extends StatefulWidget {
-  var darkThemeEnabled;
-
-  Application({Key? key, this.darkThemeEnabled}) : super(key: key);
+  Application({Key? key}) : super(key: key);
 
   @override
-  _ApplicationState createState() => _ApplicationState(darkThemeEnabled);
+  _ApplicationState createState() => _ApplicationState();
 }
 
 class _ApplicationState extends State<Application> {
 
-  var darkThemeEnabled;
-  _ApplicationState(this.darkThemeEnabled);
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +39,7 @@ class _ApplicationState extends State<Application> {
           ],
         ),
       ),
-      drawer: DrawerWidget(darkThemeEnabled),
+      drawer: DrawerWidget(),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.create),

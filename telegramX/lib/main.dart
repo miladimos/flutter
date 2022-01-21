@@ -13,13 +13,10 @@ class TelegramApplication extends StatefulWidget {
 }
 
 class _TelegramApplicationState extends State<TelegramApplication> {
-  var darkThemeEnabled = false;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: darkThemeEnabled ? ThemeData.dark() : ThemeData.light(),
-      home: Application({darkThemeEnabled}),
+      home: Application(),
     );
   }
 }

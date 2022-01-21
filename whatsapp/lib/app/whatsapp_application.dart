@@ -19,6 +19,9 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
         primaryIconTheme: IconThemeData(
           color: Colors.white,
         ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: primaryColor,
+        ),
         fontFamily: "Vazir",
       ),
       home: Whatsapp(),

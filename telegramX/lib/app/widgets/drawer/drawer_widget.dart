@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatefulWidget {
-  var darkThemeEnabled;
-  DrawerWidget({Key? key, this.darkThemeEnabled}) : super(key: key);
+  DrawerWidget({Key? key}) : super(key: key);
 
   @override
-  _DrawerWidgetState createState() => _DrawerWidgetState(darkThemeEnabled);
+  _DrawerWidgetState createState() => _DrawerWidgetState();
 }
 
 class _DrawerWidgetState extends State<DrawerWidget> {
-  var darkThemeEnabled;
-  _DrawerWidgetState(this.darkThemeEnabled);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -66,11 +62,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             leading: Icon(Icons.nightlight_round),
             trailing: Switch(
               onChanged: (changedTheme) {
-                setState(() {
-                  darkThemeEnabled = changedTheme;
-                });
+                setState(() {});
               },
-              value: darkThemeEnabled,
+              value: false,
             ),
           ),
         ],
