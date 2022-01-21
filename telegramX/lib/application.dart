@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:telegramX/app/models/chat_model.dart';
-import 'package:telegramX/app/widgets/chats/avatar_widget.dart';
 import 'package:telegramX/app/widgets/chats/chat_widget.dart';
 import 'package:telegramX/app/widgets/drawer/drawer_widget.dart';
 import 'package:telegramX/constants.dart';
 
 class Application extends StatefulWidget {
-  const Application({Key? key}) : super(key: key);
+  var darkThemeEnabled;
+
+  Application({Key? key, this.darkThemeEnabled}) : super(key: key);
 
   @override
-  _ApplicationState createState() => _ApplicationState();
+  _ApplicationState createState() => _ApplicationState(darkThemeEnabled);
 }
 
 class _ApplicationState extends State<Application> {
+
+  var darkThemeEnabled;
+  _ApplicationState(this.darkThemeEnabled);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
-        title: Text(applicationTitle),
+        title: Text(AppConstants.applicationTitle),
         actions: [
           IconButton(
               onPressed: null,
@@ -39,7 +44,7 @@ class _ApplicationState extends State<Application> {
           ],
         ),
       ),
-      drawer: DrawerWidget(),
+      drawer: DrawerWidget(darkThemeEnabled),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         child: Icon(Icons.create),

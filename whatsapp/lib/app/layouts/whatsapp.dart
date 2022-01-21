@@ -15,35 +15,31 @@ class Whatsapp extends StatefulWidget {
 class _WhatsappState extends State<Whatsapp>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late Map<String, SliverAppBar?> appBarList;
+  String _currentAppBar = 'mainAppBar';
 
   @override
   void initState() {
     super.initState();
+
     _tabController =
         TabController(vsync: this, length: _tabs.length, initialIndex: 1);
-  }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  static const List<Tab> _tabs = <Tab>[
-    Tab(icon: Icon(Icons.camera_alt)),
-    Tab(text: 'CHATS'),
-    Tab(text: 'STATUS'),
-    Tab(text: 'CALLS'),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    SliverAppBar _mainAppBar() {
+      return new SliverAppBar(
+        floating: true,
+        pinned: true,
         title: Text(applicationTitle),
         elevation: 5,
         actions: [
-          IconButton(onPressed: null, icon: Icon(Icons.search)),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              setState(() {
+                _currentAppBar = 'searchAppBar';
+              });
+            },
+          ),
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
               return [
@@ -72,18 +68,117 @@ class _WhatsappState extends State<Whatsapp>
           controller: _tabController,
           tabs: _tabs,
         ),
+      );
+    }
+
+    SliverAppBar _searchAppBar = new SliverAppBar(
+      pinned: true,
+      title: TextField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "Search ...",
+        ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          CameraPage(),
-          ChatsPage(),
-          StatusPage(),
-          CallsPage(),
-        ],
-      ),
+      elevation: 5,
+      backgroundColor: Colors.white,
+      leading: GestureDetector(
+          child: Icon(Icons.arrow_back),
+          onTap: () {
+            setState(() {
+              _currentAppBar = 'mainAppBar';
+            });
+          }),
+    );
+
+    appBarList = <String, SliverAppBar?>{
+      'mainAppBar': _mainAppBar(),
+      'searchAppBar': _searchAppBar,
+    };
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  static const List<Tab> _tabs = <Tab>[
+    Tab(icon: Icon(Icons.camera_alt)),
+    Tab(text: 'CHATS'),
+    Tab(text: 'STATUS'),
+    Tab(text: 'CALLS'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              new SliverAppBar(
+                backgroundColor: Theme.of(context).primaryColor,
+                floating: true,
+                pinned: true,
+                title: Text(applicationTitle),
+                elevation: 5,
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      setState(() {
+                        _currentAppBar = 'searchAppBar';
+                      });
+                    },
+                  ),
+                  PopupMenuButton(
+                    itemBuilder: (BuildContext context) {
+                      return [
+                        PopupMenuItem(
+                          child: Text('New group'),
+                          value: 'new_group',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Labels'),
+                          value: 'labels',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Linked devices'),
+                          value: 'linked_devices',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Settings'),
+                          value: 'settings',
+                        ),
+                      ];
+                    },
+                    onSelected: (String choice) {},
+                  ),
+                ],
+                bottom: TabBar(
+                  controller: _tabController,
+                  tabs: _tabs,
+                ),
+              )
+            ];
+          },
+          body: _currentAppBar == 'mainAppBar'
+              ? TabBarView(
+                  controller: _tabController,
+                  children: [
+                    CameraPage(),
+                    ChatsPage(),
+                    StatusPage(),
+                    CallsPage(),
+                  ],
+                )
+              : Center(
+                  child: Text('Search'),
+                )),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.message),
+        child: Icon(
+          Icons.message,
+          color: Colors.white,
+        ),
         onPressed: null,
       ),
     );

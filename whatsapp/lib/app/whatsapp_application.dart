@@ -13,7 +13,7 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
+      theme: ThemeData(        
         primaryColor: primaryColor,
         accentColor: accentColor,
         primaryIconTheme: IconThemeData(

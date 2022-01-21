@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+  var darkThemeEnabled;
+  DrawerWidget({Key? key, this.darkThemeEnabled}) : super(key: key);
 
   @override
-  _DrawerWidgetState createState() => _DrawerWidgetState();
+  _DrawerWidgetState createState() => _DrawerWidgetState(darkThemeEnabled);
 }
 
 class _DrawerWidgetState extends State<DrawerWidget> {
+  var darkThemeEnabled;
+  _DrawerWidgetState(this.darkThemeEnabled);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -53,12 +57,21 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             leading: Icon(Icons.help),
             onTap: null,
           ),
-          Divider(height: 1,),
+          Divider(
+            height: 1,
+          ),
           ListTile(
             // dense: true,
             title: Text('Night Mode'),
             leading: Icon(Icons.nightlight_round),
-            onTap: null,
+            trailing: Switch(
+              onChanged: (changedTheme) {
+                setState(() {
+                  darkThemeEnabled = changedTheme;
+                });
+              },
+              value: darkThemeEnabled,
+            ),
           ),
         ],
       ),

@@ -12,6 +12,10 @@ class ChatsPage extends StatefulWidget {
 class _ChatsPageState extends State<ChatsPage> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
+    
     return Center(
       child: ListView.builder(
         itemCount: chatsData.length,
@@ -19,7 +23,7 @@ class _ChatsPageState extends State<ChatsPage> {
           return Column(
             children: [
               Divider(
-                height: 10,
+                height: 5,
               ),
               ListTile(
                 title: Row(
@@ -37,6 +41,7 @@ class _ChatsPageState extends State<ChatsPage> {
                 ),
                 leading: AvatarWidget(chatsData[index].avatar),
                 subtitle: Container(
+                  padding: EdgeInsets.only(top:5),
                   child: Text(chatsData[index].lastMessage),
                 ),
               ),
