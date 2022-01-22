@@ -10,8 +10,10 @@ class CameraPage extends StatefulWidget {
 class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Camera'),
-    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Camera"),
+      ),
+    ); 
   }
 }

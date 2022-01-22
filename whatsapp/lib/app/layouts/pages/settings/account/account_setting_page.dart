@@ -10,8 +10,10 @@ class AccountSettingPage extends StatefulWidget {
 class _AccountSettingPageState extends State<AccountSettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('AccountSetting'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Account"),
+      ),
     );
   }
 }

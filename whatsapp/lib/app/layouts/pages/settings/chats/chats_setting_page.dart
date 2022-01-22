@@ -10,8 +10,10 @@ class ChatsSettingPage extends StatefulWidget {
 class _ChatsSettingPageState extends State<ChatsSettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('ChatsSetting'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Chats"),
+      ),
     );
   }
 }
