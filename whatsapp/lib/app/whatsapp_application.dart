@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/constants.dart';
+import 'package:whatsapp/app/layouts/pages/chats/chats_page.dart';
+import 'package:whatsapp/app/layouts/pages/splash/splash_page.dart';
 import 'package:whatsapp/app/layouts/whatsapp.dart';
 
 class WhatsappApplication extends StatefulWidget {
@@ -13,7 +15,7 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(        
+      theme: ThemeData(
         primaryColor: primaryColor,
         accentColor: accentColor,
         primaryIconTheme: IconThemeData(
@@ -24,7 +26,12 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
         ),
         fontFamily: "Vazir",
       ),
-      home: Whatsapp(),
+      initialRoute: '/splash',
+      routes: {
+        '/': (context) => Whatsapp(),
+         '/splash': (context) => SplashPage(),
+      },
+      // home: Whatsapp(),
     );
   }
 }
