@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/app/helpers.dart';
 import 'package:instagram/constants.dart';
+import 'package:instagram/ui/pages/direct/direct_page.dart';
 import 'package:instagram/ui/pages/feed/widgets/posts/list_posts_widget.dart';
 import 'package:instagram/ui/pages/feed/widgets/stories/list_stories_widget.dart';
 
@@ -17,7 +19,15 @@ class FeedPage extends StatelessWidget {
           style: TextStyle(
               color: Colors.black, fontFamily: 'Billabong', fontSize: 34),
         ),
-        actions: <Widget>[Icon(Icons.send)],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.send),
+            color: Colors.black,
+            onPressed: () {
+              Helpers.navigateToPage(context, DirectPage());
+            },
+          )
+        ],
       ),
       body: Container(
         child: ListView.builder(
