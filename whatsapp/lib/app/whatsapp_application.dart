@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/constants.dart';
+import 'package:whatsapp/app/layouts/pages/auth/welcome_page.dart';
 import 'package:whatsapp/app/layouts/pages/chats/chats_page.dart';
 import 'package:whatsapp/app/layouts/pages/splash/splash_page.dart';
 import 'package:whatsapp/app/layouts/whatsapp.dart';
@@ -26,10 +27,10 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
         ),
         fontFamily: "Vazir",
       ),
-      initialRoute: '/splash',
+      initialRoute: '/',
       routes: {
         '/': (context) => Whatsapp(),
-         '/splash': (context) => SplashPage(),
+         '/splash': (context) => WelcomePage(),
       },
       // home: Whatsapp(),
     );

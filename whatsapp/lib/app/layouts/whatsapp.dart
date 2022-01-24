@@ -104,7 +104,7 @@ class _WhatsappState extends State<Whatsapp>
     super.dispose();
   }
 
-  static const List<Tab> _tabs = <Tab>[
+  static const List<Widget> _tabs = <Widget>[
     Tab(icon: Icon(Icons.camera_alt)),
     Tab(text: 'CHATS'),
     Tab(text: 'STATUS'),
