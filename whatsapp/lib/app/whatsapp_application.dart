@@ -30,7 +30,7 @@ class _WhatsappApplicationState extends State<WhatsappApplication> {
       initialRoute: '/',
       routes: {
         '/': (context) => Whatsapp(),
-         '/splash': (context) => WelcomePage(),
+        '/splash': (context) => WelcomePage(),
       },
       // home: Whatsapp(),
     );

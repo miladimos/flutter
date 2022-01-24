@@ -17,8 +17,8 @@ class _ChatsPageState extends State<ChatsPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    return Center(
-      child: ListView.builder(
+    return Scaffold(
+      body: ListView.builder(
         itemCount: chatsData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -28,31 +28,45 @@ class _ChatsPageState extends State<ChatsPage> {
               ),
               ListTile(
                 onTap: () {
-                 
                   navigateToPage(context, ChatPage());
                 },
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      chatsData[index].name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      chatsData[index].time,
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                  ],
+                title: Text(
+                  chatsData[index].name,
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 leading: AvatarWidget(chatsData[index].avatar),
                 subtitle: Container(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(chatsData[index].lastMessage),
                 ),
+                trailing: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      chatsData[index].time,
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                    CircleAvatar(
+                      radius: 13,
+                      backgroundColor: Colors.green,
+                      child: Text(
+                        chatsData[index].unrealMessageCount.toString(),
+                        style: TextStyle(color: Colors.lightGreenAccent, fontSize: 13),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.message,
+          color: Colors.white,
+        ),
+        onPressed: null,
       ),
     );
   }
