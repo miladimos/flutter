@@ -28,7 +28,7 @@ class _ChatsPageState extends State<ChatsPage> {
               ),
               ListTile(
                 onTap: () {
-                  navigateToPage(context, ChatPage());
+                  navigateToPage(context, ChatPage(chatData: chatsData[index]));
                 },
                 title: Text(
                   chatsData[index].name,
@@ -37,7 +37,19 @@ class _ChatsPageState extends State<ChatsPage> {
                 leading: AvatarWidget(chatsData[index].avatar),
                 subtitle: Container(
                   padding: EdgeInsets.only(top: 5),
-                  child: Text(chatsData[index].lastMessage),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.done_all,
+                        size: 18,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(chatsData[index].lastMessage),
+                    ],
+                  ),
                 ),
                 trailing: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -51,7 +63,8 @@ class _ChatsPageState extends State<ChatsPage> {
                       backgroundColor: Colors.green,
                       child: Text(
                         chatsData[index].unrealMessageCount.toString(),
-                        style: TextStyle(color: Colors.lightGreenAccent, fontSize: 13),
+                        style: TextStyle(
+                            color: Colors.lightGreenAccent, fontSize: 13),
                       ),
                     ),
                   ],

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/app/models/chat_model.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  const ChatPage({Key? key, required this.chatData}) : super(key: key);
+  final ChatModel chatData;
 
   @override
   _ChatPageState createState() => _ChatPageState();
@@ -12,16 +14,40 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: <Widget>[
+        leadingWidth: 70,
+        automaticallyImplyLeading: false,
+        leading: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back),
+            ),
             CircleAvatar(
-              backgroundColor: Colors.grey,
-            ),
-            Text(
-              'Username',
-              style: TextStyle(fontSize: 14),
-            ),
+              backgroundImage: NetworkImage(widget.chatData.avatar),
+              radius: 22,
+            )
           ],
+        ),
+        title: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                widget.chatData.name,
+                style: TextStyle(fontSize: 14),
+              ),
+              Text(
+                "Online",
+                style: TextStyle(color: Colors.white70, fontSize: 13),
+              ),
+            ],
+          ),
         ),
         actions: <Widget>[
           IconButton(
@@ -36,6 +62,26 @@ class _ChatPageState extends State<ChatPage> {
             return [
               PopupMenuItem(
                 child: Text('Label chat'),
+                onTap: null,
+              ),
+              PopupMenuItem(
+                child: Text('View contact'),
+                onTap: null,
+              ),
+              PopupMenuItem(
+                child: Text('Media, links, and docs'),
+                onTap: null,
+              ),
+              PopupMenuItem(
+                child: Text('Search'),
+                onTap: null,
+              ),
+              PopupMenuItem(
+                child: Text('Mute notifications'),
+                onTap: null,
+              ),
+              PopupMenuItem(
+                child: Text('Wallpaper'),
                 onTap: null,
               ),
             ];

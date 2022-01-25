@@ -4,9 +4,10 @@ class ChatModel {
   final int unrealMessageCount;
   final String time;
   final String avatar;
+  final bool isGroup;
 
   ChatModel(this.name, this.lastMessage, this.unrealMessageCount, this.time,
-      this.avatar);
+      this.avatar, {this.isGroup = false});
 }
 
 List<ChatModel> chatsData = [
