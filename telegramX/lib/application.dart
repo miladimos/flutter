@@ -12,7 +12,6 @@ class Application extends StatefulWidget {
 }
 
 class _ApplicationState extends State<Application> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +34,13 @@ class _ApplicationState extends State<Application> {
             Divider(
               height: 0.5,
             ),
-            ChatWidget(chatsData[index].name, chatsData[index].avatar, chatsData[index].messages, chatsData[index].time, chatsData[index].messagesCount, true),
+            ChatWidget(
+                chatsData[index].name,
+                chatsData[index].avatar,
+                chatsData[index].messages,
+                chatsData[index].time,
+                chatsData[index].messagesCount,
+                true),
           ],
         ),
       ),
