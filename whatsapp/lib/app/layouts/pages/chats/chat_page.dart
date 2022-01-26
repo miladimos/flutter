@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/app/constants.dart';
 import 'package:whatsapp/app/models/chat_model.dart';
 
 class ChatPage extends StatefulWidget {
@@ -87,6 +88,68 @@ class _ChatPageState extends State<ChatPage> {
             ];
           })
         ],
+      ),
+      body: Container(
+        color: Colors.lightGreenAccent,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
+          children: [
+            ListView(),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width - 55,
+                    child: Card(
+                      margin: EdgeInsets.only(left: 2, right: 2, bottom: 8),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: TextFormField(
+                        textAlignVertical: TextAlignVertical.center,
+                        keyboardType: TextInputType.multiline,
+                        minLines: 1,
+                        decoration: InputDecoration(
+                          hintText: "Type a message",
+                          prefixIcon: IconButton(
+                            icon: Icon(Icons.emoji_emotions_outlined),
+                            onPressed: null,
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.all(5),
+                          suffixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                  onPressed: null,
+                                  icon: Icon(Icons.attach_file)),
+                              IconButton(
+                                  onPressed: null,
+                                  icon: Icon(Icons.camera_alt)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 8),
+                    child: CircleAvatar(
+                      backgroundColor: accentColor,
+                      radius: 25,
+                      child: Icon(
+                        Icons.mic,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
