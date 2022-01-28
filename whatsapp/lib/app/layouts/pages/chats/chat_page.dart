@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/constants.dart';
 import 'package:whatsapp/app/models/chat_model.dart';
@@ -11,6 +12,94 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  Widget bottomAttachmentSheet() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 320,
+      child: Card(
+        margin: EdgeInsets.only(left: 4, right: 4, bottom: 65),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  bottomAttachmentSheetIcon(Icons.insert_drive_file,
+                      Colors.deepPurpleAccent, "Document"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  bottomAttachmentSheetIcon(
+                      Icons.camera_alt, Colors.red.shade500, "Camera"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  bottomAttachmentSheetIcon(
+                      Icons.image, Colors.purple, "Gallery"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  bottomAttachmentSheetIcon(
+                      Icons.headset, Colors.deepOrange, "Audio"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  bottomAttachmentSheetIcon(
+                      Icons.location_on, Colors.green, "Location"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  bottomAttachmentSheetIcon(
+                      Icons.person, Colors.lightBlue, "Contact"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget bottomAttachmentSheetIcon(IconData? icon, Color? color, String title) {
+    return Container(
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            child: Icon(
+              icon,
+              color: Colors.white,
+              size: 29,
+            ),
+            backgroundColor: color,
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            title,
+            style: TextStyle(fontSize: 14, color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +212,14 @@ class _ChatPageState extends State<ChatPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               IconButton(
-                                  onPressed: null,
+                                  onPressed: () {
+                                    showModalBottomSheet(
+                                      backgroundColor: Colors.transparent,
+                                      context: context,
+                                      builder: (builder) =>
+                                          bottomAttachmentSheet(),
+                                    );
+                                  },
                                   icon: Icon(Icons.attach_file)),
                               IconButton(
                                   onPressed: null,

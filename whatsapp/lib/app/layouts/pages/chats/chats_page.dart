@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/functions.dart';
 import 'package:whatsapp/app/layouts/pages/chats/chat_page.dart';
+import 'package:whatsapp/app/layouts/pages/contacts/select_contact.dart';
 import 'package:whatsapp/app/layouts/widgets/avatar_widget.dart';
 import 'package:whatsapp/app/models/chat_model.dart';
 
@@ -79,7 +80,9 @@ class _ChatsPageState extends State<ChatsPage> {
           Icons.message,
           color: Colors.white,
         ),
-        onPressed: null,
+        onPressed: () {
+          navigateToPage(context, SelectContactPage());
+        },
       ),
     );
   }
