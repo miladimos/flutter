@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/app/constants.dart';
+import 'package:whatsapp/app/functions.dart';
+import 'package:whatsapp/app/layouts/pages/groups/newgroup/new_group_page.dart';
 import 'package:whatsapp/app/layouts/widgets/contact_widget.dart';
 import 'package:whatsapp/app/models/contact_model.dart';
 
@@ -72,6 +74,7 @@ class _SelectContactPageState extends State<SelectContactPage> {
                   size: 30,
                 ),
               ),
+              onTap: () => navigateToPage(context, NewGroupPage()),
             );
           }
           if (index == 1) {
