@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/twitter/build" />
       <excludeFolder url="file://$MODULE_DIR$/twitter/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/twitter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flappy_birth/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flappy_birth/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flappy_birth/build" />
       <excludeFolder url="file://$MODULE_DIR$/calculator/build" />
       <excludeFolder url="file://$MODULE_DIR$/calculator/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/calculator/.dart_tool" />
@@ -15,28 +18,50 @@
       <excludeFolder url="file://$MODULE_DIR$/whatsapp/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/whatsapp/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/whatsapp/build" />
-      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/instagram/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/instagram/build" />
-      <excludeFolder url="file://$MODULE_DIR$/telegram/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/telegram/build" />
-      <excludeFolder url="file://$MODULE_DIR$/telegram/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/fucking_covid/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/fucking_covid/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/fucking_covid/build" />
+      <excludeFolder url="file://$MODULE_DIR$/wallpaper/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/wallpaper/build" />
+      <excludeFolder url="file://$MODULE_DIR$/wallpaper/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/many_ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/many_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/many_ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/supermario/build" />
+      <excludeFolder url="file://$MODULE_DIR$/supermario/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/supermario/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/divar/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/divar/build" />
       <excludeFolder url="file://$MODULE_DIR$/divar/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool/flutter_gen/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool/flutter_gen/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool/flutter_gen/build" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram/build" />
+      <excludeFolder url="file://$MODULE_DIR$/for_learn/build" />
+      <excludeFolder url="file://$MODULE_DIR$/for_learn/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/for_learn/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/paint/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/paint/build" />
+      <excludeFolder url="file://$MODULE_DIR$/paint/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/telegramX/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/telegramX/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/telegramX/build" />
+      <excludeFolder url="file://$MODULE_DIR$/snake/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/snake/build" />
+      <excludeFolder url="file://$MODULE_DIR$/snake/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cute_2048/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cute_2048/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cute_2048/build" />
+      <excludeFolder url="file://$MODULE_DIR$/clubhouse/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/clubhouse/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/clubhouse/build" />
       <excludeFolder url="file://$MODULE_DIR$/youtube/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/youtube/build" />
       <excludeFolder url="file://$MODULE_DIR$/youtube/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>
