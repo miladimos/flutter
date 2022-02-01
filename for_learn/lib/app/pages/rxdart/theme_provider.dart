@@ -7,7 +7,7 @@ class ThemeProvider extends ChangeNotifier {
   var _currentTheme = themeData.light;
 
   themeData get currentTheme => _currentTheme;
-  
+
    setTheme(themeData theme) {
      _currentTheme = theme;
      notifyListeners();
