@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:for_learn/app/pages/custom_paint/custom_paint_page.dart';
 import 'package:for_learn/app/pages/rxdart/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:for_learn/app/pages/rxdart/rxdart_page.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         brightness: context.watch<ThemeProvider>().currentTheme == themeData.light ? Brightness.light : Brightness.dark,
         primarySwatch: Colors.blue,
       ),
-      home: const RxdartPage(),
+      // home: const RxdartPage(),
+      home: const CustomPaintPage(),
     );
   }
 }
