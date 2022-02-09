@@ -20,11 +20,15 @@ class _InstagramApplicationState extends State<InstagramApplication> {
     return MaterialApp(
       title: "Instagram",
       debugShowCheckedModeBanner: false,
-      // supportedLocales: AppLocalizations.supportedLocales,
-      // localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          iconTheme: IconThemeData(color: Colors.black),
+          titleTextStyle: TextStyle(color: Colors.black),
+        ),
         primaryIconTheme: IconThemeData(color: Colors.black),
-        primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.black))
+        primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.black)),
+        primaryColor: Colors.black,
       ),
       home: Application(),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fabler_icons/fabler_icons.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +15,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("home"),
+      ),
+      body: Center(
+        child: Row(
+          children: [
+            Icon(FablerIcons.arrows_minimize),
+          ],
+        ),
       ),
     );
   }

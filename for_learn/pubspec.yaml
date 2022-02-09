@@ -29,9 +29,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bloc: ^8.0.2
   flutter_bloc: ^8.0.1
   rxdart: ^0.27.3
   provider: ^6.0.2
+
+  fabler_icons:
+    git:
+      url: https://github.com/miladimos/fabler_icons.git
+      ref: master
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

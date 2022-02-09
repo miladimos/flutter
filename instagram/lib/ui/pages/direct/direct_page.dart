@@ -42,7 +42,7 @@ class _DirectPageState extends State<DirectPage> {
           ),
           actions: [
             IconButton(
-                onPressed: null,
+                onPressed: () => null,
                 icon: Icon(
                   Icons.video_call_outlined,
                   color: Colors.black,
